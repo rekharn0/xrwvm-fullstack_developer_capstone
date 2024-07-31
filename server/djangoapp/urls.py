@@ -7,7 +7,7 @@ from . import views
 app_name = 'djangoapp'
 urlpatterns = [
     # # path for registration
-    path('registration', views.registration_request, name='registration'),
+    path('register', views.registration_request, name='register'),
     # path for login
     path(route='login', view=views.login_user, name='login'),
     

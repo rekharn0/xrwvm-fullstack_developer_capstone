@@ -49,12 +49,17 @@ def login_user(request):
 def logout_request(request):
   data = {"userName":""}
   print("Log out the user `{}`".format(request.user.username))
+  logout(request)
+  redirect("djangoapp/login")
   return JsonResponse(data)
 
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration_request(request):
-    context = {}
+  context = {}
+  # If it is a POST request
+  if request.method == 'POST':
+
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
