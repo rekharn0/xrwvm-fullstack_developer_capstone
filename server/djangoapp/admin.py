@@ -15,7 +15,7 @@ class CarModelAdmin(admin.ModelAdmin):
     list_display = ['car_make', 'name', 'type', 'year']
     list_filter = ['type', 'car_make', 'name', 'year',]
     search_fields = ['car_make', 'name']
-    
+
 
 # CarMakeAdmin class with CarModelInline
 class CarMakeAdmin(admin.ModelAdmin):
