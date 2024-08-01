@@ -11,7 +11,7 @@ class CarMake(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     country = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.name  # Return the name as the string representation
 
