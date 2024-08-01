@@ -58,7 +58,7 @@ def logout_request(request):
 def registration_request(request):
   # context = {}
   # If it is a POST request
-    if request.method == 'POST':
+  if request.method == 'POST':
 
     data = json.loads(request.body)
     username = data['userName']
