@@ -12,15 +12,14 @@ class CarMake(models.Model):
     description = models.TextField()
     country = models.CharField(max_length=100)
     
-    def __str__(self): 
-        
-        return self.name  # Return the name as the string representation 
+    def __str__(self):
+        return self.name  # Return the name as the string representation
 
 
 class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake,
                                  on_delete=models.CASCADE)
-                                                            # Many-to-One relationship 
+    # Many-to-One relationship 
     name = models.CharField(max_length=100)
     CAR_TYPES = [
                     ('SEDAN', 'Sedan'),
@@ -29,11 +28,10 @@ class CarModel(models.Model):
                 ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(default=2023,
-    validators=[
-                        MaxValueValidator(2023),
-                        MinValueValidator(2015)
-                ])
+                               validators=[
+                                            MaxValueValidator(2023),
+                                            MinValueValidator(2015)
+                                          ])
     
     def __str__(self):
-        
         return self.name  # Return the name as the string representation
