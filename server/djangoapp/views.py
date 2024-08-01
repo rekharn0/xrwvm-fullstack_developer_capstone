@@ -82,7 +82,8 @@ def registration_request(request):
             # Create user in auth_user table
             user = User.objects.create_user(
                                         username=username,
-                                        first_name=first_name, last_name=last_name,
+                                        first_name=first_name,
+                                        last_name=last_name,
                                         password=password, email=email)
             # Login the user and redirect to list page
             login(request, user)
@@ -168,4 +169,5 @@ def get_cars(request):
         cars.append({"CarModel": car_model.name,
                      "CarMake": car_model.car_make.name})
     return JsonResponse({"CarModels": cars})
+    
      
