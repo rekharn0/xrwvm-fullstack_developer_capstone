@@ -58,8 +58,9 @@ const PostReview = () => {
 
   const json = await res.json();
   if (json.status === 200) {
-      window.location.href = window.location.origin+"reviews/dealer/"+id;
-  }
+      //window.location.href = window.location.origin+"/"+"reviews/dealer/"+id;
+      window.location.href = window.location.origin+"/dealer/"+id;
+    }
 
   }
   const get_dealer = async ()=>{
